@@ -8,12 +8,15 @@
 
 import UIKit
 
-class StudentEntryViewController: UIViewController {
+class StudentEntryViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
+    
+    
 
     @IBOutlet weak var txtstudentid: UITextField!
     @IBOutlet weak var txtstudentName: UITextField!
     @IBOutlet var seggender: UIView!
     
+    @IBOutlet weak var picker1: UIPickerView!
     @IBOutlet weak var txtemail: UITextField!
     
     @IBOutlet weak var txtm2: UITextField!
@@ -21,11 +24,53 @@ class StudentEntryViewController: UIViewController {
     @IBOutlet weak var txtm3: UITextField!
     @IBOutlet weak var txtm4: UITextField!
     
+    @IBOutlet weak var txtm5: UITextField!
+    var date:String?
+    var gender:String?
     
-    
+    var course = ["MADT", "MODT", "CSD", "WADT"]
     override func viewDidLoad() {
         super.viewDidLoad()
+       self.picker1.delegate=self
+        self.picker1.dataSource=self
+    }
 
+    @IBAction func dateview(_ sender: UIDatePicker) {
+        let date1 = DateFormatter()
+        date1.dateFormat = "dd-MM-yyyy"
+        let dates = date1.string(from: sender.date)
+        date = dates
+    
         
+    }
+    @IBAction func seggender(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0
+        {
+            gender="male"
+        }
+        else
+        {
+         gender="female"
+        }
+        
+        
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.course.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return course[row]
+    }
+
+    @IBAction func btnsave(_ sender: UIButton)
+    {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "result") as! StudentResultViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

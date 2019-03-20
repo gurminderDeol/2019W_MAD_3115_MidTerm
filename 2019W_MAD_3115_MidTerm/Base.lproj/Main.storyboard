@@ -67,7 +67,7 @@
                         <outlet property="swh" destination="wCT-jJ-jnR" id="ttO-wu-Vlf"/>
                         <outlet property="txtemail" destination="S2d-7K-UV5" id="cqM-ln-yWt"/>
                         <outlet property="txtpassword" destination="66z-6c-Afu" id="YiG-re-I57"/>
-                        <segue destination="3G4-or-e1c" kind="show" id="k2L-yu-5pr"/>
+                        <segue destination="3G4-or-e1c" kind="show" identifier="student" id="k2L-yu-5pr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -82,6 +82,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aWw-W7-rQG">
+                                <rect key="frame" x="54" y="110" width="269" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ao3-HD-jjW">
                                 <rect key="frame" x="54" y="161" width="269" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -104,12 +111,15 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xpM-FX-48M">
-                                <rect key="frame" x="127" y="206" width="121" height="28"/>
+                                <rect key="frame" x="127" y="206" width="121" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="Male"/>
+                                    <segment title="Female"/>
                                 </segments>
+                                <connections>
+                                    <action selector="seggender:" destination="3G4-or-e1c" eventType="valueChanged" id="Qqy-ol-C4m"/>
+                                </connections>
                             </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n79-31-TgU">
                                 <rect key="frame" x="244" y="452" width="97" height="30"/>
@@ -136,6 +146,9 @@
                                 <rect key="frame" x="164" y="561" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="btnsave:" destination="3G4-or-e1c" eventType="touchUpInside" id="hpy-h7-36x"/>
+                                </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="dq8-lb-TM0">
                                 <rect key="frame" x="47" y="241" width="284" height="40"/>
@@ -143,11 +156,10 @@
                                 <date key="date" timeIntervalSinceReferenceDate="574815216.73366904">
                                     <!--2019-03-20 22:53:36 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="dateview:" destination="3G4-or-e1c" eventType="valueChanged" id="XpN-DJ-e3R"/>
+                                </connections>
                             </datePicker>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B8k-QO-cqs">
-                                <rect key="frame" x="47" y="289" width="294" height="41"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jMP-Wd-caq">
                                 <rect key="frame" x="47" y="352" width="284" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -155,24 +167,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aWw-W7-rQG">
-                                <rect key="frame" x="54" y="110" width="269" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B8k-QO-cqs">
+                                <rect key="frame" x="47" y="289" width="294" height="41"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="QQS-9O-1jj"/>
                     </view>
                     <connections>
+                        <outlet property="picker1" destination="B8k-QO-cqs" id="8hn-2g-iox"/>
                         <outlet property="seggender" destination="0yq-Ca-a3t" id="RuU-K4-zY1"/>
                         <outlet property="textm1" destination="CHy-yv-7o6" id="wdW-zF-Jo3"/>
                         <outlet property="txtemail" destination="jMP-Wd-caq" id="fzd-re-G9Y"/>
                         <outlet property="txtm2" destination="MSf-Ve-0Yi" id="2rx-eD-3As"/>
                         <outlet property="txtm3" destination="n79-31-TgU" id="Fcm-TZ-dof"/>
                         <outlet property="txtm4" destination="9Ar-dS-3HW" id="XV3-pv-ieq"/>
+                        <outlet property="txtm5" destination="eYY-NX-WYs" id="lmS-l2-fN7"/>
                         <outlet property="txtstudentName" destination="Ao3-HD-jjW" id="VDV-LB-Opk"/>
                         <outlet property="txtstudentid" destination="aWw-W7-rQG" id="03H-wY-pCg"/>
                     </connections>
@@ -180,6 +191,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ohW-ZB-3v1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="940" y="-259.52023988005999"/>
+        </scene>
+        <!--Student Result View Controller-->
+        <scene sceneID="zzi-Bz-gHU">
+            <objects>
+                <viewController storyboardIdentifier="result" id="get-12-8x5" customClass="StudentResultViewController" customModule="_019W_MAD_3115_MidTerm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nCs-ZM-vVt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="gev-I7-oFL"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cC7-n9-F6z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1591" y="-260"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9OG-YV-mk0">

@@ -9,6 +9,7 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    let userdefaults = UserDefaults.standard
 
     @IBOutlet weak var txtemail: UITextField!
     
@@ -18,8 +19,17 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    }
+        if let uid = userdefaults.string(forKey: "user")
+        {
+            txtemail.text=uid
+            swh.isOn=true
+        }
+        if let pass = userdefaults.string(forKey: "pass")
+        {
+            txtpassword.text=pass
+            swh.isOn=true
+        }
+    
 
     
     
@@ -27,16 +37,27 @@ class LoginViewController: UIViewController {
     
     
     
-    
+}
     @IBAction func btnlogin(_ sender: UIButton) {
+        if swh.isOn
+        {
+            userdefaults.set(txtemail.text, forKey: "user")
+            userdefaults.set(txtpassword.text, forKey: "pass")
+            
+        }
+        else{
+            userdefaults.removeObject(forKey: "user")
+            userdefaults.removeObject(forKey: "pass")
+        }
+        
         
         
         
         if txtemail.text == "admin" && txtpassword.text == "admin@123"
         {
-            let sb = UIStoryboard(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "student") as! StudentEntryViewController
-            self.navigationController?.pushViewController(vc, animated: true)
+            
+            
+            performSegue(withIdentifier: "student", sender: self)
         }
         else
         {
