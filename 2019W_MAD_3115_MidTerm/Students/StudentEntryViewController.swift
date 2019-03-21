@@ -76,6 +76,11 @@ class StudentEntryViewController: UIViewController,UIPickerViewDelegate,UIPicker
         vc.name = txtstudentName.text
         vc.date = date
         vc.gender=gender
-        //vc.txtm1=Int(
+        vc.txtm1=Int(textm1.text!)
+        vc.txtm2=Int(txtm2.text!)
+        vc.txtm3=Int(textm1.text!)
+        vc.txtm4=Int(textm1.text!)
+        vc.txtm5=Int(textm1.text!)
+        
     }
 }

@@ -17,6 +17,8 @@
 		9BAC0C352241C898002252C8 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAC0C342241C898002252C8 /* Student.swift */; };
 		9BAC0C382241C8C7002252C8 /* StudentEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAC0C372241C8C7002252C8 /* StudentEntryViewController.swift */; };
 		9BAC0C3A2241C8DC002252C8 /* StudentResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAC0C392241C8DC002252C8 /* StudentResultViewController.swift */; };
+		9BBCCEC4224313DF00C4434E /* download.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BBCCEC3224313DF00C4434E /* download.png */; };
+		9BBCCEC62243160200C4434E /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBCCEC52243160200C4434E /* SplashViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		9BAC0C342241C898002252C8 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		9BAC0C372241C8C7002252C8 /* StudentEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentEntryViewController.swift; sourceTree = "<group>"; };
 		9BAC0C392241C8DC002252C8 /* StudentResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentResultViewController.swift; sourceTree = "<group>"; };
+		9BBCCEC3224313DF00C4434E /* download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = download.png; sourceTree = "<group>"; };
+		9BBCCEC52243160200C4434E /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,9 +112,11 @@
 				9BAC0C052241C855002252C8 /* AppDelegate.swift */,
 				9BAC0C072241C855002252C8 /* LoginViewController.swift */,
 				9BAC0C092241C855002252C8 /* Main.storyboard */,
+				9BBCCEC3224313DF00C4434E /* download.png */,
 				9BAC0C0C2241C857002252C8 /* Assets.xcassets */,
 				9BAC0C0E2241C857002252C8 /* LaunchScreen.storyboard */,
 				9BAC0C112241C857002252C8 /* Info.plist */,
+				9BBCCEC52243160200C4434E /* SplashViewController.swift */,
 			);
 			path = 2019W_MAD_3115_MidTerm;
 			sourceTree = "<group>";
@@ -257,6 +263,7 @@
 				9BAC0C102241C857002252C8 /* LaunchScreen.storyboard in Resources */,
 				9BAC0C0D2241C857002252C8 /* Assets.xcassets in Resources */,
 				9BAC0C0B2241C855002252C8 /* Main.storyboard in Resources */,
+				9BBCCEC4224313DF00C4434E /* download.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +291,7 @@
 				9BAC0C082241C855002252C8 /* LoginViewController.swift in Sources */,
 				9BAC0C352241C898002252C8 /* Student.swift in Sources */,
 				9BAC0C3A2241C8DC002252C8 /* StudentResultViewController.swift in Sources */,
+				9BBCCEC62243160200C4434E /* SplashViewController.swift in Sources */,
 				9BAC0C382241C8C7002252C8 /* StudentEntryViewController.swift in Sources */,
 				9BAC0C062241C855002252C8 /* AppDelegate.swift in Sources */,
 			);
