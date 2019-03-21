@@ -72,5 +72,10 @@ class StudentEntryViewController: UIViewController,UIPickerViewDelegate,UIPicker
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "result") as! StudentResultViewController
         self.navigationController?.pushViewController(vc, animated: true)
+        vc.id = txtstudentid.text
+        vc.name = txtstudentName.text
+        vc.date = date
+        vc.gender=gender
+        //vc.txtm1=Int(
     }
 }
