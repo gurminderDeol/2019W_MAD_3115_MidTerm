@@ -69,9 +69,13 @@ class StudentEntryViewController: UIViewController,UIPickerViewDelegate,UIPicker
 
     @IBAction func btnsave(_ sender: UIButton)
     {
+        /*let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "result") as! StudentResultViewController
+        self.navigationController?.pushViewController(vc, animated: true)*/
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "result") as! StudentResultViewController
         self.navigationController?.pushViewController(vc, animated: true)
+        
         vc.id = txtstudentid.text
         vc.name = txtstudentName.text
         vc.date = date
